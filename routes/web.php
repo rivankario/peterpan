@@ -21,12 +21,10 @@ Route::group(['middleware' => ['cekrole:0']], function () {
 });
 
 Route::group(['middleware' => ['cekrole:1']], function () {
-    Route::get('/home', [App\Http\Controllers\KepalaUnit::class, 'beranda']);
+    Route::get('/home', [App\Http\Controllers\KepalaUnit::class, 'datalowongan']);
 });
 
-Route::group(['middleware' => ['cekrole:1']], function () {
-    Route::get('/home', [App\Http\Controllers\AdminController::class, 'beranda']);
-});
+
 
 Route::group(['middleware' => ['cekrole:1']], function () {
     Route::get('/datalowongan', [App\Http\Controllers\KepalaUnit::class, 'datalowongan']);

@@ -13,14 +13,27 @@
                     <thead>
                         <tr>
                             <th>Judul</th>
-                            <th class="w-25"> </th>
+                            <th>Syarat</th>
+                            <th>Deskripsi</th>
+                            <th>Jumlah Pendaftar</th>
+                            <th>Jenis</th>
+                            <th>Tanggal Buka</th>
+                            <th>Tanggal Tutup</th>
+                            <th class="w-30"> </th>
                         </tr>
                     </thead>
                     @foreach ($lowongan as $data)
                     <tbody>
                         <tr>
                             <td>{{$data['judul']}}</td>
-                            <th class="w-25 px-3">
+                            <td>{{$data['syarat']}}</td>
+                            <td>{{$data['deskripsi']}}</td>
+                            <td>{{$data['jml_pendaftar']}}</td>
+                            <td>{{$data['jenis']}}</td>
+                            <td>{{$data['tanggal_buka']}}</td>
+                            <td>{{$data['tanggal_tutup']}}</td>
+
+                            <th class="w-20 px-3">
                                 <a href="/datalowongan/delete/{{$data->id_lowongan}}" action="/deletelowongan" >
                                     <button type="button" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-danger float-right mr-3">
                                         <i class="bi bi-trash"></i>
