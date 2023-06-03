@@ -54,8 +54,16 @@ class HomeController extends Controller
     {
         $detaillowongan = Detail_Lowongan::where('id_lowongan',$id)->get();
         // return dd($lowongan);
-        return view ('detailLowongan', ['detaillowongan'=>$detaillowongan]);
+        $syaratArray = [];
+        foreach ($detaillowongan as $detail) {
+            $syarat = explode(',', $detail->syarat);
+            $syaratArray[] = $syarat;
+        }
+        return view ('detailLowongan', ['detaillowongan'=>$detaillowongan, 'syaratArray' => $syaratArray]);
+        // return view('syarat')->with('data', $data);
+
     }
+    
 
     /**
      * Show the form for editing the specified resource.

@@ -39,16 +39,17 @@
                             </div>
                             <div class="post-details2  mb-50">
                                  <!-- Small Section Tittle -->
-                                <div class="small-section-tittle">
+                                   <div class="small-section-tittle">
                                     <h4>Syarat</h4>
                                 </div>
-                               <ul>
-                                   <li>System Software Development</li>
-                                   <li>Mobile Applicationin iOS/Android/Tizen or other platform</li>
-                                   <li>Research and code , libraries, APIs and frameworks</li>
-                                   <li>Strong knowledge on software development life cycle</li>
-                                   <li>Strong problem solving and debugging skills</li>
-                               </ul>
+                                @foreach ($syaratArray as $syarat)
+                                    <ul>
+                                        @foreach ($syarat as $item)
+                                            <li>{{ $item }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endforeach
+    
                             </div>
                             <div class="post-details2  mb-50">
                                  <!-- Small Section Tittle -->
